@@ -1,0 +1,11 @@
+<%= form_for holiday do |f| %>
+  <%= render 'shared/error_messages', model: holiday %>
+
+  <div><%= f.label :name %> <br>
+  <%= f.text_field :name %></div>
+
+  <div><%= f.label :date %> <br>
+  <%= f.date_field :date %></div>
+
+  <div><%= f.submit 'Create' %></div>
+<% end %>

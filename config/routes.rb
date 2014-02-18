@@ -6,6 +6,7 @@ HolidayReminder::Application.routes.draw do
   end
 
   resources :clients
+  resources :holidays
 
   root to: "home#index"
 end

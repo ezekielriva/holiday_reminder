@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140217000241) do
+ActiveRecord::Schema.define(version: 20140217234739) do
 
   create_table "clients", force: true do |t|
     t.string   "name"
@@ -23,6 +23,14 @@ ActiveRecord::Schema.define(version: 20140217000241) do
 
   add_index "clients", ["email"], name: "index_clients_on_email", unique: true
   add_index "clients", ["user_id"], name: "index_clients_on_user_id"
+
+  create_table "holidays", force: true do |t|
+    t.string   "name"
+    t.datetime "date"
+    t.integer  "user_id"
+  end
+
+  add_index "holidays", ["date"], name: "index_holidays_on_date", unique: true
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
