@@ -1,11 +1,29 @@
-<%= form_for client do |f| %>
-  <%= render 'shared/error_messages', model: client %>
+<div class="row">
+  <h2 class="small-12 columns">
+    <%= (client.new_record?)? 'Create': 'Edit' %>
+  </h2>
+</div>
+<div class="row">
+  <%= form_for client, html: { class: 'small-8 columns' } do |f| %>
+    <%= render 'shared/error_messages', model: client %>
 
-  <div><%= f.label :name %><br />
-  <%= f.text_field :name %></div>
+    <div>
+      <%= label_tag do %>
+        Name
+        <%= f.text_field :name %>
+      <% end %>
+    </div>
 
-  <div><%= f.label :email %><br />
-  <%= f.text_area :email %></div>
+    <div>
+      <%= label_tag do %>
+        Email
+        <%= f.email_field :email %>
+      <% end %>
+    </div>
 
-  <div><%= f.submit "Create" %></div>
-<% end %>
+    <div>
+      <%= f.submit "Create", class: 'button' %>
+      <%= link_to 'Back', clients_path %>
+    </div>
+  <% end %>
+</div>

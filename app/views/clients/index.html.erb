@@ -1,0 +1,31 @@
+<div class="row">
+  <h2 class="small-12 columns">Clients</h2>
+  <div class="small-12 columns">
+    <%= link_to 'New', new_client_path, class: 'button' %>
+  </div>
+  <div class="small-12 columns">
+    <% if clients.empty? %>
+      <div data-alert class="alert-box info">
+        No clients created yet.
+        <a href="#" class="close">&times;</a>
+    </div>
+    <% else %>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% clients.each do |client| %>
+            <td><%= client.name %></td>
+            <td><%= client.email %></td>
+            <td></td>
+          <% end %>
+        </tbody>
+      </table>
+    <% end %>
+  </div>
+</div>

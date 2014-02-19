@@ -14,6 +14,7 @@ gem 'dynamic_form'
 gem 'inherited_resources', '1.4.1'
 gem 'figaro'
 gem 'devise'
+gem 'foundation-rails'
 
 group :development, :test do
   gem 'sqlite3'
